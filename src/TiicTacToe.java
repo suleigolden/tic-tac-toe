@@ -1,3 +1,6 @@
+
+import java.awt.Color;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +17,8 @@ public class TiicTacToe extends javax.swing.JFrame {
      * Creates new form TiicTacToe
      */
     
+    private String GameStart = "P";
+    private int computerMove =0, playerMover = 0;
     
     public TiicTacToe() {
         initComponents();
@@ -71,14 +76,39 @@ public class TiicTacToe extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
         btn_1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        btn_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_1ActionPerformed(evt);
+            }
+        });
 
         btn_2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        btn_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_2ActionPerformed(evt);
+            }
+        });
 
         btn_3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        btn_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_3ActionPerformed(evt);
+            }
+        });
 
         btn_6.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        btn_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_6ActionPerformed(evt);
+            }
+        });
 
         btn_5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        btn_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_5ActionPerformed(evt);
+            }
+        });
 
         btn_4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         btn_4.addActionListener(new java.awt.event.ActionListener() {
@@ -95,8 +125,18 @@ public class TiicTacToe extends javax.swing.JFrame {
         });
 
         btn_7.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        btn_7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_7ActionPerformed(evt);
+            }
+        });
 
         btn_8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        btn_8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_8ActionPerformed(evt);
+            }
+        });
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 153));
 
@@ -230,14 +270,128 @@ public class TiicTacToe extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+   private void who_to_move(){
+       if(GameStart.equalsIgnoreCase("P")){
+           GameStart = "C";
+       }else{
+           GameStart = "P";
+       }
+   }
    
+   private void changeMove(String move){
+       switch(move){
+           case "1":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_1.setForeground(Color.BLUE);
+                }else{
+                    btn_1.setForeground(Color.RED);
+                }
+               break;
+               case "2":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_2.setForeground(Color.BLUE);
+                }else{
+                    btn_2.setForeground(Color.RED);
+                }
+               break;
+               case "3":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_3.setForeground(Color.BLUE);
+                }else{
+                    btn_3.setForeground(Color.RED);
+                }
+               break;
+               case "4":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_4.setForeground(Color.BLUE);
+                }else{
+                    btn_4.setForeground(Color.RED);
+                }
+               break;
+               case "5":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_5.setForeground(Color.BLUE);
+                }else{
+                    btn_5.setForeground(Color.RED);
+                }
+               break;
+               case "6":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_6.setForeground(Color.BLUE);
+                }else{
+                    btn_6.setForeground(Color.RED);
+                }
+               break;
+               case "7":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_7.setForeground(Color.BLUE);
+                }else{
+                    btn_7.setForeground(Color.RED);
+                }
+               break;
+               case "8":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_8.setForeground(Color.BLUE);
+                }else{
+                    btn_8.setForeground(Color.RED);
+                }
+               break;
+               case "9":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_9.setForeground(Color.BLUE);
+                }else{
+                    btn_9.setForeground(Color.RED);
+                }
+               break;
+       }
+        
+        who_to_move();
+       
+   }
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
-        // TODO add your handling code here:
+        btn_4.setText(GameStart);
+        changeMove("4");
     }//GEN-LAST:event_btn_4ActionPerformed
 
     private void btn_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_9ActionPerformed
-        // TODO add your handling code here:
+         btn_9.setText(GameStart);
+         changeMove("9");
     }//GEN-LAST:event_btn_9ActionPerformed
+
+    private void btn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_1ActionPerformed
+        btn_1.setText(GameStart);
+        changeMove("1");
+    }//GEN-LAST:event_btn_1ActionPerformed
+
+    private void btn_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_2ActionPerformed
+       btn_2.setText(GameStart);
+       changeMove("2");
+    }//GEN-LAST:event_btn_2ActionPerformed
+
+    private void btn_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_3ActionPerformed
+       btn_3.setText(GameStart);
+       changeMove("3");
+    }//GEN-LAST:event_btn_3ActionPerformed
+
+    private void btn_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_5ActionPerformed
+        btn_5.setText(GameStart);
+        changeMove("5");
+    }//GEN-LAST:event_btn_5ActionPerformed
+
+    private void btn_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_6ActionPerformed
+        btn_6.setText(GameStart);
+        changeMove("6");
+    }//GEN-LAST:event_btn_6ActionPerformed
+
+    private void btn_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_7ActionPerformed
+         btn_7.setText(GameStart);
+         changeMove("7");
+    }//GEN-LAST:event_btn_7ActionPerformed
+
+    private void btn_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_8ActionPerformed
+        btn_8.setText(GameStart);
+        changeMove("8");
+    }//GEN-LAST:event_btn_8ActionPerformed
 
     /**
      * @param args the command line arguments
