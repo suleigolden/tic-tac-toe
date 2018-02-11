@@ -417,6 +417,30 @@ public class TiicTacToe extends javax.swing.JFrame {
            btn_3.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
            popUpWhowin("PLAYER WINS!");
        }
+       //Check the COMPUTER Cross (angle 45 degrees) play or move to see if there is match.
+       //Display COMPUTER WINS if all the three bottons on angle 45 degrees from the Bottom left or right to Top, or
+       //from the Top left or right to the Buttom are C (matches) 
+       else if(H_1 == "C" && H_5 == "C" && H_9 == "C"){
+           btn_1.setBackground(Color.RED); btn_5.setBackground(Color.RED); btn_9.setBackground(Color.RED);
+           btn_1.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }else if(H_3 == "C" && H_5 == "C" && H_7 == "C"){
+           btn_3.setBackground(Color.RED); btn_5.setBackground(Color.RED); btn_7.setBackground(Color.RED);
+           btn_3.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_7.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }
+       //Check the PLAYER Cross (angle 45 degrees) play or move to see if there is match.
+       //Display PLAYER WINS if all the three bottons on angle 45 degrees from the Bottom left or right to Top, or
+       //from the Top left or right to the Bottom are C (matches) 
+       else if(H_1 == "P" && H_5 == "P" && H_9 == "P"){
+           btn_1.setBackground(Color.BLUE); btn_5.setBackground(Color.BLUE); btn_9.setBackground(Color.BLUE);
+           btn_1.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }else if(H_3 == "P" && H_5 == "P" && H_7 == "P"){
+           btn_3.setBackground(Color.BLUE); btn_5.setBackground(Color.BLUE); btn_7.setBackground(Color.BLUE);
+           btn_3.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_7.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }
    }
    
    //Display the player that win 
