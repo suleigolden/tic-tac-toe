@@ -854,6 +854,8 @@ private void ComputerPlayMoveTwo(String playerMove){
            btn_3.setBackground(Color.BLUE); btn_5.setBackground(Color.BLUE); btn_7.setBackground(Color.BLUE);
            btn_3.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_7.setForeground(Color.WHITE);
            popUpWhowin("PLAYER WINS!");
+       }else{
+           checkGameDraw();
        }
    }
    
@@ -861,6 +863,17 @@ private void ComputerPlayMoveTwo(String playerMove){
    private void popUpWhowin(String player){
         JOptionPane.showMessageDialog(this, player+", in "+player_MovePlay+ " Moves.");
         ResetPlay();
+   }
+   //Game Draw method
+   private void checkGameDraw(){
+       if(!btn_1.getText().equals("") && !btn_2.getText().equals("") && !btn_3.getText().equals("") &&
+          !btn_4.getText().equals("") && !btn_5.getText().equals("") && !btn_6.getText().equals("") &&
+          !btn_7.getText().equals("") && !btn_8.getText().equals("") && !btn_9.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "The Game is Draw!");
+             ResetPlay();
+       }else{
+           
+       }
    }
    //Reset Game Play 
    private void ResetPlay(){
