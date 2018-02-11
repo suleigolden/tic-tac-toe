@@ -58,8 +58,8 @@ public class TiicTacToe extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        Btn_resetMenu = new javax.swing.JMenuItem();
+        Btn_ExitMenu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -265,16 +265,26 @@ public class TiicTacToe extends javax.swing.JFrame {
         jMenuItem2.setText("5x5 Board");
         jMenu1.add(jMenuItem2);
 
-        jMenuItem3.setBackground(new java.awt.Color(255, 255, 255));
-        jMenuItem3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem3.setText("Reset");
-        jMenu1.add(jMenuItem3);
+        Btn_resetMenu.setBackground(new java.awt.Color(255, 255, 255));
+        Btn_resetMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Btn_resetMenu.setText("Reset");
+        Btn_resetMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_resetMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Btn_resetMenu);
 
-        jMenuItem4.setBackground(new java.awt.Color(0, 102, 102));
-        jMenuItem4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem4.setForeground(new java.awt.Color(204, 0, 0));
-        jMenuItem4.setText("Exit Game");
-        jMenu1.add(jMenuItem4);
+        Btn_ExitMenu.setBackground(new java.awt.Color(0, 102, 102));
+        Btn_ExitMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Btn_ExitMenu.setForeground(new java.awt.Color(204, 0, 0));
+        Btn_ExitMenu.setText("Exit Game");
+        Btn_ExitMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_ExitMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Btn_ExitMenu);
 
         jMenuBar1.add(jMenu1);
         jMenuBar1.add(jMenu2);
@@ -939,6 +949,20 @@ private void ComputerPlayMoveTwo(String playerMove){
         changeMove("8");
     }//GEN-LAST:event_btn_8ActionPerformed
 
+    private void Btn_resetMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_resetMenuActionPerformed
+        ResetPlay();
+    }//GEN-LAST:event_Btn_resetMenuActionPerformed
+    
+    private void Btn_ExitMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ExitMenuActionPerformed
+        if( JOptionPane.showConfirmDialog(rootPane, "Are you Sure You want to Exit?"," Tic Tac Toa",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+             System.exit(0);
+        }else{
+            
+        }
+       
+    }//GEN-LAST:event_Btn_ExitMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -975,6 +999,8 @@ private void ComputerPlayMoveTwo(String playerMove){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Btn_ExitMenu;
+    private javax.swing.JMenuItem Btn_resetMenu;
     private javax.swing.JButton btn_1;
     private javax.swing.JButton btn_2;
     private javax.swing.JButton btn_3;
@@ -992,8 +1018,6 @@ private void ComputerPlayMoveTwo(String playerMove){
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
