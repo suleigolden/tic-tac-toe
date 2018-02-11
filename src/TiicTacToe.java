@@ -446,6 +446,22 @@ public class TiicTacToe extends javax.swing.JFrame {
    //Display the player that win 
    private void popUpWhowin(String player){
         JOptionPane.showMessageDialog(this, player);
+        ResetPlay();
+   }
+   //Reset Game Play 
+   private void ResetPlay(){
+       //Set all botton text to null
+       btn_1.setText(null); btn_2.setText(null); btn_3.setText(null);
+       btn_4.setText(null); btn_5.setText(null); btn_6.setText(null);
+       btn_7.setText(null); btn_8.setText(null); btn_9.setText(null);
+       //set all the bottons background color to white
+       btn_1.setBackground(Color.WHITE); btn_2.setBackground(Color.WHITE); btn_3.setBackground(Color.WHITE);
+       btn_4.setBackground(Color.WHITE); btn_5.setBackground(Color.WHITE); btn_6.setBackground(Color.WHITE);
+       btn_7.setBackground(Color.WHITE); btn_8.setBackground(Color.WHITE); btn_9.setBackground(Color.WHITE);
+       //set all the bottons foreground color to white
+       btn_1.setForeground(Color.WHITE); btn_2.setForeground(Color.WHITE); btn_3.setForeground(Color.WHITE);
+       btn_4.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE);
+       btn_7.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
    }
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
         btn_4.setText(GameStart);
