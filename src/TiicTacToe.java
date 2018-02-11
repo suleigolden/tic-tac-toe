@@ -327,12 +327,12 @@ public class TiicTacToe extends javax.swing.JFrame {
         try{
             switch(playerMove){
                    case "1":
-                        if(btn_2.getText().equals("")){
+                        if(btn_6.getText().equals("")){
+                            btn_6.setText("C");
+                            btn_6.setForeground(Color.RED);
+                        }else if(btn_2.getText().equals("")){
                             btn_2.setText("C");
                             btn_2.setForeground(Color.RED);
-                        }else if(btn_3.getText().equals("")){
-                            btn_3.setText("C");
-                            btn_3.setForeground(Color.RED);
                         }else if(btn_4.getText().equals("")){
                             btn_4.setText("C");
                             btn_4.setForeground(Color.RED);
@@ -363,9 +363,9 @@ public class TiicTacToe extends javax.swing.JFrame {
                            }
                          break;
                      case "3":
-                            if(btn_1.getText().equals("")){
-                                btn_1.setText("C");
-                                btn_1.setForeground(Color.RED);
+                            if(btn_4.getText().equals("")){
+                                btn_4.setText("C");
+                                btn_4.setForeground(Color.RED);
                              }else  if(btn_2.getText().equals("")){
                                 btn_2.setText("C");
                                 btn_2.setForeground(Color.RED);
