@@ -890,6 +890,8 @@ private void ComputerPlayMoveTwo(String playerMove){
        btn_4.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE);
        btn_7.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
        player_MovePlay = 1; computer_MovePlay =0;
+       lb_computer_playMove.setText("0");
+       lb_human_playMove.setText("0");
    }
 
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
