@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -269,7 +270,7 @@ public class TiicTacToe extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+// Check the next move if is computer or player
    private void who_to_move(){
        if(GameStart.equalsIgnoreCase("P")){
            GameStart = "C";
@@ -277,7 +278,8 @@ public class TiicTacToe extends javax.swing.JFrame {
            GameStart = "P";
        }
    }
-   
+//Change the text of a button to C and the color Red if computer plays or move and change the text of a button to
+//P and the color Blue if a player plays or move.
    private void changeMove(String move){
        switch(move){
            case "1":
@@ -346,7 +348,49 @@ public class TiicTacToe extends javax.swing.JFrame {
        }
         
         who_to_move();
+       Check_i_win();
+   }
+   
+   private void Check_i_win(){
+       //Getting the Holizontal values of player move
+       String H_1 = btn_1.getText();  String H_2 = btn_2.getText();  String H_3 = btn_3.getText();
+       String H_4 = btn_4.getText();  String H_5 = btn_5.getText();  String H_6 = btn_6.getText();
+       String H_7 = btn_7.getText();  String H_8 = btn_8.getText();  String H_9 = btn_9.getText();
        
+       //Check the COMPUTER Top, Middle and Bottom Horizontal move to see if there is match in the row.
+       //Display COMPUTER WINS if all the rows of Top or Middle or Bottom Horizontal are C (matches) 
+       if(H_1 == "C" && H_2 == "C" && H_3 == "C"){
+           btn_1.setBackground(Color.RED); btn_2.setBackground(Color.RED); btn_3.setBackground(Color.RED);
+           btn_1.setForeground(Color.WHITE); btn_2.setForeground(Color.WHITE); btn_3.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }else if(H_4 == "C" && H_5 == "C" && H_6 == "C"){
+           btn_4.setBackground(Color.RED); btn_5.setBackground(Color.RED); btn_6.setBackground(Color.RED);
+           btn_4.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }else if(H_7 == "C" && H_8 == "C" && H_9 == "C"){
+           btn_7.setBackground(Color.RED); btn_8.setBackground(Color.RED); btn_9.setBackground(Color.RED);
+           btn_7.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }
+       //Check the PLAYER Top, Middle and Bottom Horizontal move to see if there is match in the row
+       ////Display PLAYER WINS if all the rows of Top or Middle or Bottom Horizontal are P (matches)
+       else if(H_1 == "P" && H_2 == "P" && H_3 == "P"){
+           btn_1.setBackground(Color.BLUE); btn_2.setBackground(Color.BLUE); btn_3.setBackground(Color.BLUE);
+           btn_1.setForeground(Color.WHITE); btn_2.setForeground(Color.WHITE); btn_3.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }else if(H_4 == "P" && H_5 == "P" && H_6 == "P"){
+           btn_4.setBackground(Color.BLUE); btn_5.setBackground(Color.BLUE); btn_6.setBackground(Color.BLUE);
+           btn_4.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }else if(H_7 == "P" && H_8 == "P" && H_9 == "P"){
+           btn_7.setBackground(Color.BLUE); btn_8.setBackground(Color.BLUE); btn_9.setBackground(Color.BLUE);
+           btn_7.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }
+   }
+   //Display the player that win 
+   private void popUpWhowin(String player){
+        JOptionPane.showMessageDialog(this, player);
    }
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
         btn_4.setText(GameStart);
