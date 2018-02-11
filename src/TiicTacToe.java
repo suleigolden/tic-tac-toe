@@ -544,15 +544,15 @@ private void ComputerPlayMoveTwo(String playerMove){
                         }else if(btn_3.getText().equals("P") && btn_1.getText().equals("P") && btn_2.getText().equals("")){
                             btn_2.setText("C");
                             btn_2.setForeground(Color.RED);
+                        }else if(btn_3.getText().equals("P") && btn_5.getText().equals("P") && btn_7.getText().equals("")){
+                            btn_7.setText("C");
+                            btn_7.setForeground(Color.RED);
                         }else if(btn_3.getText().equals("P") && btn_6.getText().equals("P") && btn_9.getText().equals("")){
                             btn_9.setText("C");
                             btn_9.setForeground(Color.RED);
                         }else if(btn_3.getText().equals("P") && btn_9.getText().equals("P") && btn_6.getText().equals("")){
                             btn_6.setText("C");
                             btn_6.setForeground(Color.RED);
-                        }else if(btn_3.getText().equals("P") && btn_5.getText().equals("P") && btn_7.getText().equals("")){
-                            btn_7.setText("C");
-                            btn_7.setForeground(Color.RED);
                         }else if(btn_3.getText().equals("P") && btn_7.getText().equals("P") && btn_5.getText().equals("")){
                             btn_5.setText("C");
                             btn_5.setForeground(Color.RED);
@@ -889,6 +889,7 @@ private void ComputerPlayMoveTwo(String playerMove){
        btn_1.setForeground(Color.WHITE); btn_2.setForeground(Color.WHITE); btn_3.setForeground(Color.WHITE);
        btn_4.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE);
        btn_7.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+       player_MovePlay = 1; computer_MovePlay =0;
    }
 
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
