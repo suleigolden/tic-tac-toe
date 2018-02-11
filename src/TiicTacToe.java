@@ -23,8 +23,7 @@ public class TiicTacToe extends javax.swing.JFrame {
     
     public TiicTacToe() {
         initComponents();
-        setSize(300,300);
-        setLocationRelativeTo(null);
+        StartGame();
     }
 
     /**
@@ -270,13 +269,24 @@ public class TiicTacToe extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+//Start Game Method
+    public void StartGame(){
+        setSize(300,300);
+        setLocationRelativeTo(null);
+       //set all the bottons background color to white
+       btn_1.setBackground(Color.WHITE); btn_2.setBackground(Color.WHITE); btn_3.setBackground(Color.WHITE);
+       btn_4.setBackground(Color.WHITE); btn_5.setBackground(Color.WHITE); btn_6.setBackground(Color.WHITE);
+       btn_7.setBackground(Color.WHITE); btn_8.setBackground(Color.WHITE); btn_9.setBackground(Color.WHITE);
+}
 // Check the next move if is computer or player
    private void who_to_move(){
        if(GameStart.equalsIgnoreCase("P")){
            GameStart = "C";
+           
        }else{
-           GameStart = "P";
+            GameStart = "P";
        }
+       
    }
 //Change the text of a button to C and the color Red if computer plays or move and change the text of a button to
 //P and the color Blue if a player plays or move.
@@ -348,7 +358,7 @@ public class TiicTacToe extends javax.swing.JFrame {
        }
         
         who_to_move();
-       Check_i_win();
+        Check_i_win();
    }
    
    private void Check_i_win(){
@@ -451,9 +461,9 @@ public class TiicTacToe extends javax.swing.JFrame {
    //Reset Game Play 
    private void ResetPlay(){
        //Set all botton text to null
-       btn_1.setText(null); btn_2.setText(null); btn_3.setText(null);
-       btn_4.setText(null); btn_5.setText(null); btn_6.setText(null);
-       btn_7.setText(null); btn_8.setText(null); btn_9.setText(null);
+       btn_1.setText(""); btn_2.setText(""); btn_3.setText("");
+       btn_4.setText(""); btn_5.setText(""); btn_6.setText("");
+       btn_7.setText(""); btn_8.setText(""); btn_9.setText("");
        //set all the bottons background color to white
        btn_1.setBackground(Color.WHITE); btn_2.setBackground(Color.WHITE); btn_3.setBackground(Color.WHITE);
        btn_4.setBackground(Color.WHITE); btn_5.setBackground(Color.WHITE); btn_6.setBackground(Color.WHITE);
@@ -463,6 +473,7 @@ public class TiicTacToe extends javax.swing.JFrame {
        btn_4.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE);
        btn_7.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
    }
+
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
         btn_4.setText(GameStart);
         changeMove("4");
