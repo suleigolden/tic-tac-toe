@@ -19,7 +19,7 @@ public class TiicTacToe extends javax.swing.JFrame {
      */
     
     private String GameStart = "P";
-    private int computerMove =0, playerMover = 0;
+    private int playerMover = 0;
     
     public TiicTacToe() {
         initComponents();
@@ -279,14 +279,194 @@ public class TiicTacToe extends javax.swing.JFrame {
        btn_7.setBackground(Color.WHITE); btn_8.setBackground(Color.WHITE); btn_9.setBackground(Color.WHITE);
 }
 // Check the next move if is computer or player
-   private void who_to_move(){
-       if(GameStart.equalsIgnoreCase("P")){
+   private void who_to_move(String playerMove){
+      /* if(GameStart.equalsIgnoreCase("P")){
            GameStart = "C";
            
        }else{
             GameStart = "P";
-       }
-       
+       }*/
+       ComputerPlayMoveOne(playerMove);
+   }
+ private void ComputerPlayMoveOne(String playerMove){
+        try{
+            switch(playerMove){
+                   case "1":
+                        if(btn_2.getText().equals("")){
+                            btn_2.setText("C");
+                            btn_2.setForeground(Color.RED);
+                        }else if(btn_3.getText().equals("")){
+                            btn_3.setText("C");
+                            btn_3.setForeground(Color.RED);
+                        }else if(btn_4.getText().equals("")){
+                            btn_4.setText("C");
+                            btn_4.setForeground(Color.RED);
+                        }else if(btn_7.getText().equals("")){
+                            btn_7.setText("C");
+                            btn_7.setForeground(Color.RED);
+                        }else if(btn_5.getText().equals("")){
+                            btn_5.setText("C");
+                            btn_5.setForeground(Color.RED);
+                        }else if(btn_9.getText().equals("")){
+                            btn_9.setText("C");
+                            btn_9.setForeground(Color.RED);
+                        }
+                    break;
+                     case "2":
+                            if(btn_1.getText().equals("")){
+                               btn_1.setText("C");
+                               btn_1.setForeground(Color.RED);
+                           }else if(btn_3.getText().equals("")){
+                               btn_3.setText("C");
+                               btn_3.setForeground(Color.RED);
+                           }else if(btn_5.getText().equals("")){
+                               btn_5.setText("C");
+                               btn_5.setForeground(Color.RED);
+                           }else if(btn_8.getText().equals("")){
+                               btn_8.setText("C");
+                               btn_8.setForeground(Color.RED);
+                           }
+                         break;
+                     case "3":
+                            if(btn_1.getText().equals("")){
+                                btn_1.setText("C");
+                                btn_1.setForeground(Color.RED);
+                             }else  if(btn_2.getText().equals("")){
+                                btn_2.setText("C");
+                                btn_2.setForeground(Color.RED);
+                            }else  if(btn_5.getText().equals("")){
+                                btn_5.setText("C");
+                                btn_5.setForeground(Color.RED);
+                            }else  if(btn_7.getText().equals("")){
+                                btn_7.setText("C");
+                                btn_7.setForeground(Color.RED);
+                            }else if(btn_6.getText().equals("")){
+                              btn_6.setText("C");
+                              btn_6.setForeground(Color.RED);
+                            }else if(btn_9.getText().equals("")){
+                              btn_9.setText("C");
+                              btn_9.setForeground(Color.RED);
+                            }
+                         break;
+                     case "4":
+                            if(btn_1.getText().equals("")){
+                              btn_1.setText("C");
+                              btn_1.setForeground(Color.RED);
+                            }else if(btn_7.getText().equals("")){
+                              btn_7.setText("C");
+                              btn_7.setForeground(Color.RED);
+                            }else if(btn_5.getText().equals("")){
+                              btn_5.setText("C");
+                              btn_5.setForeground(Color.RED);
+                            }else if(btn_6.getText().equals("")){
+                              btn_6.setText("C");
+                              btn_6.setForeground(Color.RED);
+                            }
+                         break;
+                     case "5":
+                            if(btn_1.getText().equals("")){
+                              btn_1.setText("C");
+                              btn_1.setForeground(Color.RED);
+                            }else if(btn_2.getText().equals("")){
+                              btn_2.setText("C");
+                              btn_2.setForeground(Color.RED);
+                            }else  if(btn_3.getText().equals("")){
+                              btn_3.setText("C");
+                              btn_3.setForeground(Color.RED);
+                            }else  if(btn_4.getText().equals("")){
+                              btn_4.setText("C");
+                              btn_4.setForeground(Color.RED);
+                            }else if(btn_6.getText().equals("")){
+                              btn_6.setText("C");
+                              btn_6.setForeground(Color.RED);
+                            }else if(btn_7.getText().equals("")){
+                              btn_7.setText("C");
+                              btn_7.setForeground(Color.RED);
+                            }else if(btn_8.getText().equals("")){
+                              btn_8.setText("C");
+                              btn_8.setForeground(Color.RED);
+                            }else if(btn_9.getText().equals("")){
+                              btn_9.setText("C");
+                              btn_9.setForeground(Color.RED);
+                            }
+                         break;
+                     case "6":
+                            if(btn_3.getText().equals("")){
+                              btn_3.setText("C");
+                              btn_3.setForeground(Color.RED);
+                            }else if(btn_4.getText().equals("")){
+                              btn_4.setText("C");
+                              btn_4.setForeground(Color.RED);
+                            }else if(btn_5.getText().equals("")){
+                              btn_5.setText("C");
+                              btn_5.setForeground(Color.RED);
+                            }else if(btn_9.getText().equals("")){
+                              btn_9.setText("C");
+                              btn_9.setForeground(Color.RED);
+                            }
+                         break;
+                     case "7":
+                            if(btn_1.getText().equals("")){
+                              btn_1.setText("C");
+                              btn_1.setForeground(Color.RED);
+                            }else if(btn_4.getText().equals("")){
+                              btn_4.setText("C");
+                              btn_4.setForeground(Color.RED);
+                            }else if(btn_5.getText().equals("")){
+                              btn_5.setText("C");
+                              btn_5.setForeground(Color.RED);
+                            }else if(btn_3.getText().equals("")){
+                              btn_3.setText("C");
+                              btn_3.setForeground(Color.RED);
+                            }else if(btn_8.getText().equals("")){
+                              btn_8.setText("C");
+                              btn_8.setForeground(Color.RED);
+                            }else if(btn_9.getText().equals("")){
+                              btn_9.setText("C");
+                              btn_9.setForeground(Color.RED);
+                            }
+                         break;
+                     case "8":
+                            if(btn_7.getText().equals("")){
+                              btn_7.setText("C");
+                              btn_7.setForeground(Color.RED);
+                            }else if(btn_2.getText().equals("")){
+                              btn_2.setText("C");
+                              btn_2.setForeground(Color.RED);
+                            }else if(btn_5.getText().equals("")){
+                              btn_5.setText("C");
+                              btn_5.setForeground(Color.RED);
+                            }else if(btn_9.getText().equals("")){
+                              btn_9.setText("C");
+                              btn_9.setForeground(Color.RED);
+                            }
+                         break;
+                     case "9":
+                            if(btn_1.getText().equals("")){
+                              btn_1.setText("C");
+                              btn_1.setForeground(Color.RED);
+                            }else if(btn_5.getText().equals("")){
+                              btn_5.setText("C");
+                              btn_5.setForeground(Color.RED);
+                            }else if(btn_3.getText().equals("")){
+                              btn_3.setText("C");
+                              btn_3.setForeground(Color.RED);
+                            }else if(btn_6.getText().equals("")){
+                              btn_6.setText("C");
+                              btn_6.setForeground(Color.RED);
+                            }else if(btn_7.getText().equals("")){
+                              btn_7.setText("C");
+                              btn_7.setForeground(Color.RED);
+                            }else if(btn_8.getText().equals("")){
+                              btn_8.setText("C");
+                              btn_8.setForeground(Color.RED);
+                            }
+                         break;
+            }
+            playerMover += 1;
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(this, e);
+      }
    }
 //Change the text of a button to C and the color Red if computer plays or move and change the text of a button to
 //P and the color Blue if a player plays or move.
@@ -357,7 +537,7 @@ public class TiicTacToe extends javax.swing.JFrame {
                break;
        }
         
-        who_to_move();
+        who_to_move(move);
         Check_i_win();
    }
    
@@ -455,7 +635,7 @@ public class TiicTacToe extends javax.swing.JFrame {
    
    //Display the player that win 
    private void popUpWhowin(String player){
-        JOptionPane.showMessageDialog(this, player);
+        JOptionPane.showMessageDialog(this, player+", in "+playerMover+ " Moves.");
         ResetPlay();
    }
    //Reset Game Play 
