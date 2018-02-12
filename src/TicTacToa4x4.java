@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,8 +17,13 @@ public class TicTacToa4x4 extends javax.swing.JFrame {
     /**
      * Creates new form TicTacToa4x4
      */
+    private String GameStart = "P";
+    private int player_MovePlay = 1, computer_MovePlay =0;
+   
+    
     public TicTacToa4x4() {
         initComponents();
+        StartGame();
     }
 
     /**
@@ -43,10 +52,17 @@ public class TicTacToa4x4 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        Btn_resetMenu = new javax.swing.JMenuItem();
+        Btn_ExitMenu = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 0));
 
         btn_1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         btn_1.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +157,7 @@ public class TicTacToa4x4 extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lb_human_playMove)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 134, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,44 +174,46 @@ public class TicTacToa4x4 extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_8, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_9, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 5, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btn_4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                    .addComponent(btn_7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_5, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                    .addComponent(btn_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_9, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                    .addComponent(btn_6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_5, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btn_8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_7, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -208,24 +226,698 @@ public class TicTacToa4x4 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(149, 149, 149)
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        jMenu1.setText("Menu");
+
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem1.setForeground(new java.awt.Color(0, 0, 153));
+        jMenuItem1.setText("3x3 Board");
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem2.setForeground(new java.awt.Color(0, 0, 153));
+        jMenuItem2.setText("5x5 Board");
+        jMenu1.add(jMenuItem2);
+
+        Btn_resetMenu.setBackground(new java.awt.Color(255, 255, 255));
+        Btn_resetMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Btn_resetMenu.setText("Reset");
+        Btn_resetMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_resetMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Btn_resetMenu);
+
+        Btn_ExitMenu.setBackground(new java.awt.Color(0, 102, 102));
+        Btn_ExitMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Btn_ExitMenu.setForeground(new java.awt.Color(204, 0, 0));
+        Btn_ExitMenu.setText("Exit Game");
+        Btn_ExitMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_ExitMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Btn_ExitMenu);
+
+        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+  
+
+//Start Game Method
+    public void StartGame(){
+        setSize(400,400);
+        setLocationRelativeTo(null);
+       //set all the bottons background color to white
+       btn_1.setBackground(Color.WHITE); btn_2.setBackground(Color.WHITE); btn_3.setBackground(Color.WHITE);
+       btn_4.setBackground(Color.WHITE); btn_5.setBackground(Color.WHITE); btn_6.setBackground(Color.WHITE);
+       btn_7.setBackground(Color.WHITE); btn_8.setBackground(Color.WHITE); btn_9.setBackground(Color.WHITE);
+}
+// Check the next move if is computer or player
+   private void who_to_move(String playerMove){
+      /* if(GameStart.equalsIgnoreCase("P")){
+           GameStart = "C";
+           
+       }else{
+            GameStart = "P";
+       }*/
+       if(player_MovePlay > 1){
+            ComputerPlayMoveTwo(playerMove);
+            computer_MovePlay++;
+           lb_computer_playMove.setText(String.format("%s", computer_MovePlay));
+       }else{
+            ComputerPlayMoveOne(playerMove);
+            computer_MovePlay++;
+            lb_computer_playMove.setText(String.format("%s", computer_MovePlay));
+       }
+      
+   }
+  ////Computer Player First move method that plays once or move once in random, the first time a player plays or move
+ private void ComputerPlayMoveOne(String playerMove){
+        try{
+            switch(playerMove){
+                   case "1":
+                        if(btn_6.getText().equals("")){
+                            btn_6.setText("C");
+                            btn_6.setForeground(Color.RED);
+                        }else if(btn_2.getText().equals("")){
+                            btn_2.setText("C");
+                            btn_2.setForeground(Color.RED);
+                        }else if(btn_4.getText().equals("")){
+                            btn_4.setText("C");
+                            btn_4.setForeground(Color.RED);
+                        }else if(btn_7.getText().equals("")){
+                            btn_7.setText("C");
+                            btn_7.setForeground(Color.RED);
+                        }else if(btn_5.getText().equals("")){
+                            btn_5.setText("C");
+                            btn_5.setForeground(Color.RED);
+                        }else if(btn_9.getText().equals("")){
+                            btn_9.setText("C");
+                            btn_9.setForeground(Color.RED);
+                        }
+                    break;
+                     case "2":
+                            if(btn_1.getText().equals("")){
+                               btn_1.setText("C");
+                               btn_1.setForeground(Color.RED);
+                           }else if(btn_3.getText().equals("")){
+                               btn_3.setText("C");
+                               btn_3.setForeground(Color.RED);
+                           }else if(btn_5.getText().equals("")){
+                               btn_5.setText("C");
+                               btn_5.setForeground(Color.RED);
+                           }else if(btn_8.getText().equals("")){
+                               btn_8.setText("C");
+                               btn_8.setForeground(Color.RED);
+                           }
+                         break;
+                     case "3":
+                            if(btn_4.getText().equals("")){
+                                btn_4.setText("C");
+                                btn_4.setForeground(Color.RED);
+                             }else  if(btn_2.getText().equals("")){
+                                btn_2.setText("C");
+                                btn_2.setForeground(Color.RED);
+                            }else  if(btn_5.getText().equals("")){
+                                btn_5.setText("C");
+                                btn_5.setForeground(Color.RED);
+                            }else  if(btn_7.getText().equals("")){
+                                btn_7.setText("C");
+                                btn_7.setForeground(Color.RED);
+                            }else if(btn_6.getText().equals("")){
+                              btn_6.setText("C");
+                              btn_6.setForeground(Color.RED);
+                            }else if(btn_9.getText().equals("")){
+                              btn_9.setText("C");
+                              btn_9.setForeground(Color.RED);
+                            }
+                         break;
+                     case "4":
+                            if(btn_1.getText().equals("")){
+                              btn_1.setText("C");
+                              btn_1.setForeground(Color.RED);
+                            }else if(btn_7.getText().equals("")){
+                              btn_7.setText("C");
+                              btn_7.setForeground(Color.RED);
+                            }else if(btn_5.getText().equals("")){
+                              btn_5.setText("C");
+                              btn_5.setForeground(Color.RED);
+                            }else if(btn_6.getText().equals("")){
+                              btn_6.setText("C");
+                              btn_6.setForeground(Color.RED);
+                            }
+                         break;
+                     case "5":
+                            if(btn_1.getText().equals("")){
+                              btn_1.setText("C");
+                              btn_1.setForeground(Color.RED);
+                            }else if(btn_2.getText().equals("")){
+                              btn_2.setText("C");
+                              btn_2.setForeground(Color.RED);
+                            }else  if(btn_3.getText().equals("")){
+                              btn_3.setText("C");
+                              btn_3.setForeground(Color.RED);
+                            }else  if(btn_4.getText().equals("")){
+                              btn_4.setText("C");
+                              btn_4.setForeground(Color.RED);
+                            }else if(btn_6.getText().equals("")){
+                              btn_6.setText("C");
+                              btn_6.setForeground(Color.RED);
+                            }else if(btn_7.getText().equals("")){
+                              btn_7.setText("C");
+                              btn_7.setForeground(Color.RED);
+                            }else if(btn_8.getText().equals("")){
+                              btn_8.setText("C");
+                              btn_8.setForeground(Color.RED);
+                            }else if(btn_9.getText().equals("")){
+                              btn_9.setText("C");
+                              btn_9.setForeground(Color.RED);
+                            }
+                         break;
+                     case "6":
+                            if(btn_3.getText().equals("")){
+                              btn_3.setText("C");
+                              btn_3.setForeground(Color.RED);
+                            }else if(btn_4.getText().equals("")){
+                              btn_4.setText("C");
+                              btn_4.setForeground(Color.RED);
+                            }else if(btn_5.getText().equals("")){
+                              btn_5.setText("C");
+                              btn_5.setForeground(Color.RED);
+                            }else if(btn_9.getText().equals("")){
+                              btn_9.setText("C");
+                              btn_9.setForeground(Color.RED);
+                            }
+                         break;
+                     case "7":
+                            if(btn_6.getText().equals("")){
+                              btn_6.setText("C");
+                              btn_6.setForeground(Color.RED);
+                            }else if(btn_4.getText().equals("")){
+                              btn_4.setText("C");
+                              btn_4.setForeground(Color.RED);
+                            }else if(btn_5.getText().equals("")){
+                              btn_5.setText("C");
+                              btn_5.setForeground(Color.RED);
+                            }else if(btn_3.getText().equals("")){
+                              btn_3.setText("C");
+                              btn_3.setForeground(Color.RED);
+                            }else if(btn_8.getText().equals("")){
+                              btn_8.setText("C");
+                              btn_8.setForeground(Color.RED);
+                            }else if(btn_9.getText().equals("")){
+                              btn_9.setText("C");
+                              btn_9.setForeground(Color.RED);
+                            }
+                         break;
+                     case "8":
+                            if(btn_7.getText().equals("")){
+                              btn_7.setText("C");
+                              btn_7.setForeground(Color.RED);
+                            }else if(btn_2.getText().equals("")){
+                              btn_2.setText("C");
+                              btn_2.setForeground(Color.RED);
+                            }else if(btn_5.getText().equals("")){
+                              btn_5.setText("C");
+                              btn_5.setForeground(Color.RED);
+                            }else if(btn_9.getText().equals("")){
+                              btn_9.setText("C");
+                              btn_9.setForeground(Color.RED);
+                            }
+                         break;
+                     case "9":
+                            if(btn_4.getText().equals("")){
+                              btn_4.setText("C");
+                              btn_4.setForeground(Color.RED);
+                            }else if(btn_5.getText().equals("")){
+                              btn_5.setText("C");
+                              btn_5.setForeground(Color.RED);
+                            }else if(btn_3.getText().equals("")){
+                              btn_3.setText("C");
+                              btn_3.setForeground(Color.RED);
+                            }else if(btn_6.getText().equals("")){
+                              btn_6.setText("C");
+                              btn_6.setForeground(Color.RED);
+                            }else if(btn_7.getText().equals("")){
+                              btn_7.setText("C");
+                              btn_7.setForeground(Color.RED);
+                            }else if(btn_8.getText().equals("")){
+                              btn_8.setText("C");
+                              btn_8.setForeground(Color.RED);
+                            }
+                         break;
+            }
+            player_MovePlay += 1;
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(this, e);
+      }
+   }
+//Computer Player second move method that always plays the best move
+private void ComputerPlayMoveTwo(String playerMove){
+       try{
+           switch(playerMove){
+                   case "1":
+                       if(btn_1.getText().equals("P") && btn_2.getText().equals("P") && btn_3.getText().equals("")){
+                            btn_3.setText("C");
+                            btn_3.setForeground(Color.RED);
+                        }else if(btn_1.getText().equals("P") && btn_3.getText().equals("P") && btn_2.getText().equals("")){
+                            btn_2.setText("C");
+                            btn_2.setForeground(Color.RED);
+                        }else if(btn_1.getText().equals("P") && btn_4.getText().equals("P") && btn_7.getText().equals("")){
+                            btn_7.setText("C");
+                            btn_7.setForeground(Color.RED);
+                        }else if(btn_1.getText().equals("P") && btn_7.getText().equals("P") && btn_4.getText().equals("")){
+                            btn_4.setText("C");
+                            btn_4.setForeground(Color.RED);
+                        }else if(btn_1.getText().equals("P") && btn_5.getText().equals("P") && btn_9.getText().equals("")){
+                            btn_9.setText("C");
+                            btn_9.setForeground(Color.RED);
+                        }else if(btn_1.getText().equals("P") && btn_9.getText().equals("P") && btn_5.getText().equals("")){
+                            btn_5.setText("C");
+                            btn_5.setForeground(Color.RED);
+                        }else{
+                             ComputerPlayMoveOne(playerMove);
+                        }
+                       break;
+                   case "2":
+                       if(btn_1.getText().equals("P") && btn_2.getText().equals("P") && btn_3.getText().equals("")){
+                            btn_3.setText("C");
+                            btn_3.setForeground(Color.RED);
+                        }else if(btn_2.getText().equals("P") && btn_3.getText().equals("P") && btn_1.getText().equals("")){
+                            btn_1.setText("C");
+                            btn_1.setForeground(Color.RED);
+                        }else if(btn_2.getText().equals("P") && btn_5.getText().equals("P") && btn_8.getText().equals("")){
+                            btn_8.setText("C");
+                            btn_8.setForeground(Color.RED);
+                        }else if(btn_2.getText().equals("P") && btn_8.getText().equals("P") && btn_5.getText().equals("")){
+                            btn_5.setText("C");
+                            btn_5.setForeground(Color.RED);
+                        }else{
+                             ComputerPlayMoveOne(playerMove);
+                        }
+                       break;
+                   case "3":
+                       if(btn_3.getText().equals("P") && btn_2.getText().equals("P") && btn_1.getText().equals("")){
+                            btn_1.setText("C");
+                            btn_1.setForeground(Color.RED);
+                        }else if(btn_3.getText().equals("P") && btn_1.getText().equals("P") && btn_2.getText().equals("")){
+                            btn_2.setText("C");
+                            btn_2.setForeground(Color.RED);
+                        }else if(btn_3.getText().equals("P") && btn_5.getText().equals("P") && btn_7.getText().equals("")){
+                            btn_7.setText("C");
+                            btn_7.setForeground(Color.RED);
+                        }else if(btn_3.getText().equals("P") && btn_6.getText().equals("P") && btn_9.getText().equals("")){
+                            btn_9.setText("C");
+                            btn_9.setForeground(Color.RED);
+                        }else if(btn_3.getText().equals("P") && btn_9.getText().equals("P") && btn_6.getText().equals("")){
+                            btn_6.setText("C");
+                            btn_6.setForeground(Color.RED);
+                        }else if(btn_3.getText().equals("P") && btn_7.getText().equals("P") && btn_5.getText().equals("")){
+                            btn_5.setText("C");
+                            btn_5.setForeground(Color.RED);
+                        }else{
+                             ComputerPlayMoveOne(playerMove);
+                        }
+                       break;
+                   case "4":
+                       if(btn_4.getText().equals("P") && btn_1.getText().equals("P") && btn_7.getText().equals("")){
+                            btn_7.setText("C");
+                            btn_7.setForeground(Color.RED);
+                        }else if(btn_4.getText().equals("P") && btn_7.getText().equals("P") && btn_1.getText().equals("")){
+                            btn_1.setText("C");
+                            btn_1.setForeground(Color.RED);
+                        }else if(btn_4.getText().equals("P") && btn_5.getText().equals("P") && btn_6.getText().equals("")){
+                            btn_6.setText("C");
+                            btn_6.setForeground(Color.RED);
+                        }else if(btn_4.getText().equals("P") && btn_6.getText().equals("P") && btn_5.getText().equals("")){
+                            btn_5.setText("C");
+                            btn_5.setForeground(Color.RED);
+                        }else{
+                             ComputerPlayMoveOne(playerMove);
+                        }
+                       break;
+                   case "5":
+                       if(btn_5.getText().equals("P") && btn_1.getText().equals("P") && btn_9.getText().equals("")){
+                            btn_9.setText("C");
+                            btn_9.setForeground(Color.RED);
+                        }else if(btn_5.getText().equals("P") && btn_2.getText().equals("P") && btn_8.getText().equals("")){
+                            btn_8.setText("C");
+                            btn_8.setForeground(Color.RED);
+                        }else if(btn_5.getText().equals("P") && btn_3.getText().equals("P") && btn_7.getText().equals("")){
+                            btn_7.setText("C");
+                            btn_7.setForeground(Color.RED);
+                        }else if(btn_5.getText().equals("P") && btn_6.getText().equals("P") && btn_4.getText().equals("")){
+                            btn_4.setText("C");
+                            btn_4.setForeground(Color.RED);
+                        }else if(btn_5.getText().equals("P") && btn_9.getText().equals("P") && btn_1.getText().equals("")){
+                            btn_1.setText("C");
+                            btn_1.setForeground(Color.RED);
+                        }else if(btn_5.getText().equals("P") && btn_8.getText().equals("P") && btn_2.getText().equals("")){
+                            btn_2.setText("C");
+                            btn_2.setForeground(Color.RED);
+                        }else if(btn_5.getText().equals("P") && btn_7.getText().equals("P") && btn_3.getText().equals("")){
+                            btn_3.setText("C");
+                            btn_3.setForeground(Color.RED);
+                        }else if(btn_5.getText().equals("P") && btn_4.getText().equals("P") && btn_6.getText().equals("")){
+                            btn_6.setText("C");
+                            btn_6.setForeground(Color.RED);
+                        }else{
+                             ComputerPlayMoveOne(playerMove);
+                        }
+                       break;
+                   case "6":
+                       if(btn_6.getText().equals("P") && btn_3.getText().equals("P") && btn_9.getText().equals("")){
+                            btn_9.setText("C");
+                            btn_9.setForeground(Color.RED);
+                        }else if(btn_6.getText().equals("P") && btn_9.getText().equals("P") && btn_3.getText().equals("")){
+                            btn_3.setText("C");
+                            btn_3.setForeground(Color.RED);
+                        }else if(btn_6.getText().equals("P") && btn_5.getText().equals("P") && btn_4.getText().equals("")){
+                            btn_4.setText("C");
+                            btn_4.setForeground(Color.RED);
+                        }else if(btn_6.getText().equals("P") && btn_4.getText().equals("P") && btn_5.getText().equals("")){
+                            btn_5.setText("C");
+                            btn_5.setForeground(Color.RED);
+                        }else{
+                             ComputerPlayMoveOne(playerMove);
+                        }
+                       break;
+                   case "7":
+                       if(btn_7.getText().equals("P") && btn_4.getText().equals("P") && btn_1.getText().equals("")){
+                            btn_1.setText("C");
+                            btn_1.setForeground(Color.RED);
+                        }else if(btn_7.getText().equals("P") && btn_1.getText().equals("P") && btn_4.getText().equals("")){
+                            btn_4.setText("C");
+                            btn_4.setForeground(Color.RED);
+                        }else if(btn_7.getText().equals("P") && btn_8.getText().equals("P") && btn_9.getText().equals("")){
+                            btn_9.setText("C");
+                            btn_9.setForeground(Color.RED);
+                        }else if(btn_7.getText().equals("P") && btn_9.getText().equals("P") && btn_8.getText().equals("")){
+                            btn_8.setText("C");
+                            btn_8.setForeground(Color.RED);
+                        }else if(btn_7.getText().equals("P") && btn_5.getText().equals("P") && btn_3.getText().equals("")){
+                            btn_3.setText("C");
+                            btn_3.setForeground(Color.RED);
+                        }if(btn_7.getText().equals("P") && btn_3.getText().equals("P") && btn_5.getText().equals("")){
+                            btn_5.setText("C");
+                            btn_5.setForeground(Color.RED);
+                        }else{
+                             ComputerPlayMoveOne(playerMove);
+                        }
+                       break;
+                   case "8":
+                       if(btn_8.getText().equals("P") && btn_7.getText().equals("P") && btn_9.getText().equals("")){
+                            btn_9.setText("C");
+                            btn_9.setForeground(Color.RED);
+                        }else if(btn_8.getText().equals("P") && btn_9.getText().equals("P") && btn_7.getText().equals("")){
+                            btn_7.setText("C");
+                            btn_7.setForeground(Color.RED);
+                        }else if(btn_8.getText().equals("P") && btn_5.getText().equals("P") && btn_2.getText().equals("")){
+                            btn_2.setText("C");
+                            btn_2.setForeground(Color.RED);
+                        }else if(btn_8.getText().equals("P") && btn_2.getText().equals("P") && btn_5.getText().equals("")){
+                            btn_5.setText("C");
+                            btn_5.setForeground(Color.RED);
+                        }else{
+                             ComputerPlayMoveOne(playerMove);
+                        }
+                       break;
+                   case "9":
+                       if(btn_9.getText().equals("P") && btn_6.getText().equals("P") && btn_3.getText().equals("")){
+                            btn_3.setText("C");
+                            btn_3.setForeground(Color.RED);
+                        }else if(btn_9.getText().equals("P") && btn_9.getText().equals("P") && btn_6.getText().equals("")){
+                            btn_6.setText("C");
+                            btn_6.setForeground(Color.RED);
+                        }else if(btn_9.getText().equals("P") && btn_8.getText().equals("P") && btn_7.getText().equals("")){
+                            btn_7.setText("C");
+                            btn_7.setForeground(Color.RED);
+                        }else if(btn_9.getText().equals("P") && btn_7.getText().equals("P") && btn_8.getText().equals("")){
+                            btn_8.setText("C");
+                            btn_8.setForeground(Color.RED);
+                        }else if(btn_9.getText().equals("P") && btn_5.getText().equals("P") && btn_1.getText().equals("")){
+                            btn_1.setText("C");
+                            btn_1.setForeground(Color.RED);
+                        }else if(btn_9.getText().equals("P") && btn_1.getText().equals("P") && btn_5.getText().equals("")){
+                            btn_5.setText("C");
+                            btn_5.setForeground(Color.RED);
+                        }else{
+                             ComputerPlayMoveOne(playerMove);
+                        }
+                       break;
+                   
+           }
+       }catch(Exception e){
+          JOptionPane.showMessageDialog(this, e);
+      }
+  }
+//Change the text of a button to C and the color Red if computer plays or move and change the text of a button to
+//P and the color Blue if a player plays or move.
+   private void changeMove(String move){
+       switch(move){
+           case "1":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_1.setForeground(Color.BLUE);
+                }else{
+                    btn_1.setForeground(Color.RED);
+                }
+               break;
+               case "2":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_2.setForeground(Color.BLUE);
+                }else{
+                    btn_2.setForeground(Color.RED);
+                }
+               break;
+               case "3":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_3.setForeground(Color.BLUE);
+                }else{
+                    btn_3.setForeground(Color.RED);
+                }
+               break;
+               case "4":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_4.setForeground(Color.BLUE);
+                }else{
+                    btn_4.setForeground(Color.RED);
+                }
+               break;
+               case "5":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_5.setForeground(Color.BLUE);
+                }else{
+                    btn_5.setForeground(Color.RED);
+                }
+               break;
+               case "6":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_6.setForeground(Color.BLUE);
+                }else{
+                    btn_6.setForeground(Color.RED);
+                }
+               break;
+               case "7":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_7.setForeground(Color.BLUE);
+                }else{
+                    btn_7.setForeground(Color.RED);
+                }
+               break;
+               case "8":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_8.setForeground(Color.BLUE);
+                }else{
+                    btn_8.setForeground(Color.RED);
+                }
+               break;
+               case "9":
+               if(GameStart.equalsIgnoreCase("P")){
+                    btn_9.setForeground(Color.BLUE);
+                }else{
+                    btn_9.setForeground(Color.RED);
+                }
+               break;
+       }
+        lb_human_playMove.setText(String.format("%s", player_MovePlay));
+        who_to_move(move);
+        Check_i_win();
+   }
+   
+   private void Check_i_win(){
+       //Getting the Holizontal values of player move
+       String H_1 = btn_1.getText();  String H_2 = btn_2.getText();  String H_3 = btn_3.getText();
+       String H_4 = btn_4.getText();  String H_5 = btn_5.getText();  String H_6 = btn_6.getText();
+       String H_7 = btn_7.getText();  String H_8 = btn_8.getText();  String H_9 = btn_9.getText();
+       
+       //Check the COMPUTER Top, Middle and Bottom Horizontal move to see if there is match in the row.
+       //Display COMPUTER WINS if all the rows of Top or Middle or Bottom Horizontal are C (matches) 
+       if(H_1 == "C" && H_2 == "C" && H_3 == "C"){
+           btn_1.setBackground(Color.RED); btn_2.setBackground(Color.RED); btn_3.setBackground(Color.RED);
+           btn_1.setForeground(Color.WHITE); btn_2.setForeground(Color.WHITE); btn_3.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }else if(H_4 == "C" && H_5 == "C" && H_6 == "C"){
+           btn_4.setBackground(Color.RED); btn_5.setBackground(Color.RED); btn_6.setBackground(Color.RED);
+           btn_4.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }else if(H_7 == "C" && H_8 == "C" && H_9 == "C"){
+           btn_7.setBackground(Color.RED); btn_8.setBackground(Color.RED); btn_9.setBackground(Color.RED);
+           btn_7.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }
+       //Check the PLAYER Top, Middle and Bottom Horizontal move to see if there is match in the row
+       ////Display PLAYER WINS if all the rows of Top or Middle or Bottom Horizontal are P (matches)
+       else if(H_1 == "P" && H_2 == "P" && H_3 == "P"){
+           btn_1.setBackground(Color.BLUE); btn_2.setBackground(Color.BLUE); btn_3.setBackground(Color.BLUE);
+           btn_1.setForeground(Color.WHITE); btn_2.setForeground(Color.WHITE); btn_3.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }else if(H_4 == "P" && H_5 == "P" && H_6 == "P"){
+           btn_4.setBackground(Color.BLUE); btn_5.setBackground(Color.BLUE); btn_6.setBackground(Color.BLUE);
+           btn_4.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }else if(H_7 == "P" && H_8 == "P" && H_9 == "P"){
+           btn_7.setBackground(Color.BLUE); btn_8.setBackground(Color.BLUE); btn_9.setBackground(Color.BLUE);
+           btn_7.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }
+        //Check the COMPUTER Top, Middle and Bottom Vertical move to see if there is match in the row.
+       //Display COMPUTER WINS if all the rows of Top or Middle or Bottom Horizontal are C (matches) 
+       else if(H_1 == "C" && H_4 == "C" && H_7 == "C"){
+           btn_1.setBackground(Color.RED); btn_4.setBackground(Color.RED); btn_7.setBackground(Color.RED);
+           btn_1.setForeground(Color.WHITE); btn_4.setForeground(Color.WHITE); btn_7.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }else if(H_2 == "C" && H_5 == "C" && H_8 == "C"){
+           btn_2.setBackground(Color.RED); btn_5.setBackground(Color.RED); btn_8.setBackground(Color.RED);
+           btn_2.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }else if(H_3 == "C" && H_6 == "C" && H_9 == "C"){
+           btn_3.setBackground(Color.RED); btn_6.setBackground(Color.RED); btn_9.setBackground(Color.RED);
+           btn_3.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }
+        //Check the PLAYER Top, Middle and Bottom Vertical move to see if there is match in the row.
+       //Display PLAYER WINS if all the rows of Top or Middle or Bottom Horizontal are C (matches) 
+       else if(H_1 == "P" && H_4 == "P" && H_7 == "P"){
+           btn_1.setBackground(Color.BLUE); btn_4.setBackground(Color.BLUE); btn_7.setBackground(Color.BLUE);
+           btn_1.setForeground(Color.WHITE); btn_4.setForeground(Color.WHITE); btn_7.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }else if(H_2 == "P" && H_5 == "P" && H_8 == "P"){
+           btn_2.setBackground(Color.BLUE); btn_5.setBackground(Color.BLUE); btn_8.setBackground(Color.BLUE);
+           btn_2.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }else if(H_3 == "P" && H_6 == "P" && H_9 == "P"){
+           btn_3.setBackground(Color.BLUE); btn_6.setBackground(Color.BLUE); btn_9.setBackground(Color.BLUE);
+           btn_3.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }
+       //Check the COMPUTER Cross (angle 45 degrees) play or move to see if there is match.
+       //Display COMPUTER WINS if all the three bottons on angle 45 degrees from the Bottom left or right to Top, or
+       //from the Top left or right to the Buttom are C (matches) 
+       else if(H_1 == "C" && H_5 == "C" && H_9 == "C"){
+           btn_1.setBackground(Color.RED); btn_5.setBackground(Color.RED); btn_9.setBackground(Color.RED);
+           btn_1.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }else if(H_3 == "C" && H_5 == "C" && H_7 == "C"){
+           btn_3.setBackground(Color.RED); btn_5.setBackground(Color.RED); btn_7.setBackground(Color.RED);
+           btn_3.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_7.setForeground(Color.WHITE);
+           popUpWhowin("COMPUTER WINS!");
+       }
+       //Check the PLAYER Cross (angle 45 degrees) play or move to see if there is match.
+       //Display PLAYER WINS if all the three bottons on angle 45 degrees from the Bottom left or right to Top, or
+       //from the Top left or right to the Bottom are C (matches) 
+       else if(H_1 == "P" && H_5 == "P" && H_9 == "P"){
+           btn_1.setBackground(Color.BLUE); btn_5.setBackground(Color.BLUE); btn_9.setBackground(Color.BLUE);
+           btn_1.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }else if(H_3 == "P" && H_5 == "P" && H_7 == "P"){
+           btn_3.setBackground(Color.BLUE); btn_5.setBackground(Color.BLUE); btn_7.setBackground(Color.BLUE);
+           btn_3.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_7.setForeground(Color.WHITE);
+           popUpWhowin("PLAYER WINS!");
+       }else{
+           checkGameDraw();
+       }
+   }
+   
+   //Display the player that win 
+   private void popUpWhowin(String player){
+        JOptionPane.showMessageDialog(this, player+", in "+player_MovePlay+ " Moves.");
+        ResetPlay();
+   }
+   //Game Draw method
+   private void checkGameDraw(){
+       if(!btn_1.getText().equals("") && !btn_2.getText().equals("") && !btn_3.getText().equals("") &&
+          !btn_4.getText().equals("") && !btn_5.getText().equals("") && !btn_6.getText().equals("") &&
+          !btn_7.getText().equals("") && !btn_8.getText().equals("") && !btn_9.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "The Game is Draw!");
+             ResetPlay();
+       }else{
+           
+       }
+   }
+   //Reset Game Play 
+   private void ResetPlay(){
+       //Set all botton text to null
+       btn_1.setText(""); btn_2.setText(""); btn_3.setText("");
+       btn_4.setText(""); btn_5.setText(""); btn_6.setText("");
+       btn_7.setText(""); btn_8.setText(""); btn_9.setText("");
+       //set all the bottons background color to white
+       btn_1.setBackground(Color.WHITE); btn_2.setBackground(Color.WHITE); btn_3.setBackground(Color.WHITE);
+       btn_4.setBackground(Color.WHITE); btn_5.setBackground(Color.WHITE); btn_6.setBackground(Color.WHITE);
+       btn_7.setBackground(Color.WHITE); btn_8.setBackground(Color.WHITE); btn_9.setBackground(Color.WHITE);
+       //set all the bottons foreground color to white
+       btn_1.setForeground(Color.WHITE); btn_2.setForeground(Color.WHITE); btn_3.setForeground(Color.WHITE);
+       btn_4.setForeground(Color.WHITE); btn_5.setForeground(Color.WHITE); btn_6.setForeground(Color.WHITE);
+       btn_7.setForeground(Color.WHITE); btn_8.setForeground(Color.WHITE); btn_9.setForeground(Color.WHITE);
+       player_MovePlay = 1; computer_MovePlay =0;
+       lb_computer_playMove.setText("0");
+       lb_human_playMove.setText("0");
+   }
+    private void Btn_resetMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_resetMenuActionPerformed
+        ResetPlay();
+    }//GEN-LAST:event_Btn_resetMenuActionPerformed
+
+    private void Btn_ExitMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ExitMenuActionPerformed
+        if( JOptionPane.showConfirmDialog(rootPane, "Are you Sure You want to Exit?"," Tic Tac Toa",
+            JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+        System.exit(0);
+        }else{
+
+        }
+
+    }//GEN-LAST:event_Btn_ExitMenuActionPerformed
 
     private void btn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_1ActionPerformed
         btn_1.setText(GameStart);
@@ -308,6 +1000,8 @@ public class TicTacToa4x4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Btn_ExitMenu;
+    private javax.swing.JMenuItem Btn_resetMenu;
     private javax.swing.JButton btn_1;
     private javax.swing.JButton btn_2;
     private javax.swing.JButton btn_3;
@@ -320,6 +1014,11 @@ public class TicTacToa4x4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
