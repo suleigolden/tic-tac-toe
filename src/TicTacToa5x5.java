@@ -907,48 +907,75 @@ private void ComputerPlayMoveTwo(String playerMove){
     }//GEN-LAST:event_Btn_ExitMenuActionPerformed
 
     private void btn_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_8ActionPerformed
-        btn_8.setText(GameStart);
-        changeMove("8");
+        if(btn_8.getText().equals("")){
+            btn_8.setText(GameStart);
+            changeMove("8");
+        }
+       
     }//GEN-LAST:event_btn_8ActionPerformed
 
     private void btn_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_7ActionPerformed
-        btn_7.setText(GameStart);
-        changeMove("7");
+        if(btn_7.getText().equals("")){
+            btn_7.setText(GameStart);
+            changeMove("7");
+        }
+        
     }//GEN-LAST:event_btn_7ActionPerformed
 
     private void btn_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_9ActionPerformed
-        btn_9.setText(GameStart);
-        changeMove("9");
+        if(btn_9.getText().equals("")){
+            btn_9.setText(GameStart);
+            changeMove("9");
+        }
+        
     }//GEN-LAST:event_btn_9ActionPerformed
 
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
-        btn_4.setText(GameStart);
-        changeMove("4");
+        if(btn_4.getText().equals("")){
+            btn_4.setText(GameStart);
+            changeMove("4");
+        }
+        
     }//GEN-LAST:event_btn_4ActionPerformed
 
     private void btn_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_5ActionPerformed
-        btn_5.setText(GameStart);
-        changeMove("5");
+        if(btn_5.getText().equals("")){
+            btn_5.setText(GameStart);
+            changeMove("5");
+        }
+       
     }//GEN-LAST:event_btn_5ActionPerformed
 
     private void btn_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_6ActionPerformed
-        btn_6.setText(GameStart);
-        changeMove("6");
+        if(btn_6.getText().equals("")){
+            btn_6.setText(GameStart);
+            changeMove("6");
+        }
+        
     }//GEN-LAST:event_btn_6ActionPerformed
 
     private void btn_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_3ActionPerformed
-        btn_3.setText(GameStart);
-        changeMove("3");
+        if(btn_3.getText().equals("")){
+            btn_3.setText(GameStart);
+            changeMove("3");
+        }
+       
     }//GEN-LAST:event_btn_3ActionPerformed
 
     private void btn_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_2ActionPerformed
-        btn_2.setText(GameStart);
-        changeMove("2");
+        if(btn_2.getText().equals("")){
+            btn_2.setText(GameStart);
+            changeMove("2");
+        }
+        
     }//GEN-LAST:event_btn_2ActionPerformed
 
     private void btn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_1ActionPerformed
-        btn_1.setText(GameStart);
-        changeMove("1");
+        if(btn_1.getText().equals("")){
+            btn_1.setText(GameStart);
+            changeMove("1");
+        }
+        
     }//GEN-LAST:event_btn_1ActionPerformed
 
     /**
