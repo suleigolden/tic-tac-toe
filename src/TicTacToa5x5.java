@@ -1,5 +1,7 @@
 
 import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 
 /*
@@ -51,9 +53,9 @@ public class TicTacToa5x5 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        menu = new javax.swing.JMenu();
+        btn_3x3 = new javax.swing.JMenuItem();
+        btn_4x4 = new javax.swing.JMenuItem();
         Btn_resetMenu = new javax.swing.JMenuItem();
         Btn_ExitMenu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -243,17 +245,27 @@ public class TicTacToa5x5 extends javax.swing.JFrame {
 
         jMenuBar1.setBackground(new java.awt.Color(102, 0, 102));
 
-        jMenu1.setText("Menu");
+        menu.setText("Menu");
 
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem1.setForeground(new java.awt.Color(0, 0, 153));
-        jMenuItem1.setText("3x3 Board");
-        jMenu1.add(jMenuItem1);
+        btn_3x3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_3x3.setForeground(new java.awt.Color(0, 0, 153));
+        btn_3x3.setText("3x3 Board");
+        btn_3x3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_3x3ActionPerformed(evt);
+            }
+        });
+        menu.add(btn_3x3);
 
-        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem2.setForeground(new java.awt.Color(0, 0, 153));
-        jMenuItem2.setText("4x4 Board");
-        jMenu1.add(jMenuItem2);
+        btn_4x4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_4x4.setForeground(new java.awt.Color(0, 0, 153));
+        btn_4x4.setText("4x4 Board");
+        btn_4x4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_4x4ActionPerformed(evt);
+            }
+        });
+        menu.add(btn_4x4);
 
         Btn_resetMenu.setBackground(new java.awt.Color(255, 255, 255));
         Btn_resetMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -263,7 +275,7 @@ public class TicTacToa5x5 extends javax.swing.JFrame {
                 Btn_resetMenuActionPerformed(evt);
             }
         });
-        jMenu1.add(Btn_resetMenu);
+        menu.add(Btn_resetMenu);
 
         Btn_ExitMenu.setBackground(new java.awt.Color(0, 102, 102));
         Btn_ExitMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -274,9 +286,9 @@ public class TicTacToa5x5 extends javax.swing.JFrame {
                 Btn_ExitMenuActionPerformed(evt);
             }
         });
-        jMenu1.add(Btn_ExitMenu);
+        menu.add(Btn_ExitMenu);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menu);
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -977,6 +989,23 @@ private void ComputerPlayMoveTwo(String playerMove){
         }
         
     }//GEN-LAST:event_btn_1ActionPerformed
+//Close the current form function
+    public void close(){
+        WindowEvent winClosingEvent = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
+       
+    }
+    private void btn_3x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_3x3ActionPerformed
+            close();
+            TiicTacToe three = new TiicTacToe();
+            three.setVisible(true);
+    }//GEN-LAST:event_btn_3x3ActionPerformed
+
+    private void btn_4x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4x4ActionPerformed
+            close();
+            TicTacToa4x4 four = new TicTacToa4x4();
+            four.setVisible(true);
+    }//GEN-LAST:event_btn_4x4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1019,7 +1048,9 @@ private void ComputerPlayMoveTwo(String playerMove){
     private javax.swing.JButton btn_1;
     private javax.swing.JButton btn_2;
     private javax.swing.JButton btn_3;
+    private javax.swing.JMenuItem btn_3x3;
     private javax.swing.JButton btn_4;
+    private javax.swing.JMenuItem btn_4x4;
     private javax.swing.JButton btn_5;
     private javax.swing.JButton btn_6;
     private javax.swing.JButton btn_7;
@@ -1028,15 +1059,13 @@ private void ComputerPlayMoveTwo(String playerMove){
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lb_computer_playMove;
     private javax.swing.JLabel lb_human_playMove;
+    private javax.swing.JMenu menu;
     // End of variables declaration//GEN-END:variables
 }
