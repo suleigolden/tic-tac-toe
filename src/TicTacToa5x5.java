@@ -996,15 +996,19 @@ private void ComputerPlayMoveTwo(String playerMove){
        
     }
     private void btn_3x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_3x3ActionPerformed
-            close();
+            /*close();
             TiicTacToe three = new TiicTacToe();
-            three.setVisible(true);
+            three.setVisible(true);*/
+            this.setVisible(false);
+            new TiicTacToe().setVisible(true);
     }//GEN-LAST:event_btn_3x3ActionPerformed
 
     private void btn_4x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4x4ActionPerformed
-            close();
+            /*close();
             TicTacToa4x4 four = new TicTacToa4x4();
-            four.setVisible(true);
+            four.setVisible(true);*/
+            this.setVisible(false);
+            new TicTacToa4x4().setVisible(true);
     }//GEN-LAST:event_btn_4x4ActionPerformed
 
     /**

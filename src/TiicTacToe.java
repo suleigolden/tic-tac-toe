@@ -1008,15 +1008,19 @@ private void ComputerPlayMoveTwo(String playerMove){
        
     }
     private void btn_4x4MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4x4MenuActionPerformed
-            close();
-            TicTacToa4x4 four = new TicTacToa4x4();
-            four.setVisible(true);
+            //close();
+            //TicTacToa4x4 four = new TicTacToa4x4();
+            //four.setVisible(true);
+              this.setVisible(false);
+              new TicTacToa4x4().setVisible(true);
     }//GEN-LAST:event_btn_4x4MenuActionPerformed
 
     private void btn_5x5MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_5x5MenuActionPerformed
-            close();
-            TicTacToa4x4 five = new TicTacToa4x4();
-            five.setVisible(true);
+            //close();
+            //TicTacToa4x4 five = new TicTacToa4x4();
+            //five.setVisible(true);
+              this.setVisible(false);
+              new TicTacToa5x5().setVisible(true);
     }//GEN-LAST:event_btn_5x5MenuActionPerformed
 
     /**
